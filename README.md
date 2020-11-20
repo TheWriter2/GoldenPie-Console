@@ -10,12 +10,12 @@ Normal:
 listdir:Prints all folders present in the directory you specify.\
 listfile:Prints all files present in the directory you specify.\
 dirgo:Sets the current directory to a directory you specify.\
-createdir:Creates a folder in the current directory with the name you specify.\
+createdir:Creates a folder in the current directory with the name you specify.
 
 Main:
 
 main.exit:Exits the console.\
-main.about:Shows a about text.\
+main.about:Shows a about text.
 
 Text:
 
