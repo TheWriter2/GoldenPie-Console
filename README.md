@@ -17,10 +17,6 @@ Main:
 main.exit:Exits the console.
 main.about:Shows a about text.
 
-Main Windows-Only:
-
-main.win.about:Shows a about text on a messagebox window.
-
 Text:
 
 text.write:Prompts to write a text document with a name and text you specify(1000 Lines Maximum).
