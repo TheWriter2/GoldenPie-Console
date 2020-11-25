@@ -11,7 +11,7 @@ listdir:Prints all folders present in the directory you specify.\
 listfile:Prints all files present in the directory you specify.\
 dirgo:Sets the current directory to a directory you specify.\
 createdir:Creates a folder in the current directory with the name you specify.\
-deletedir:Deletes a folder if is empty.
+deletedir:Deletes a folder if its empty.
 
 Main:
 
