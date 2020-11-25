@@ -20,7 +20,7 @@ main.about:Shows a about text.
 
 Text:
 
-text.write:Prompts to write a text document with a name and text you specify(1000 Lines Maximum).
+text.write:Prompts to write a text document with a name and text you specify(1000 Lines Maximum).\
 text.read:Prints line per line of a text document you specify.
 
 Compatibility:
