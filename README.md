@@ -29,7 +29,7 @@ Windows 8.1 - 64Bits(Tested)
 
 # Building from source
 
-It is a normal python script, so you must use a library to package it to a executable, an example is pyinstaller(used in the releases).\
+It is a normal python script, so you must use a library to package it to a executable, an example is pyinstaller(used in the releases).
 
 To package with it:\
 -Install the library(pip install pyinstaller)\
