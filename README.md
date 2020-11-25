@@ -3,7 +3,7 @@ A python console with directory administration
 
 GoldenPie Console is a python-made console with different commands for directory handling.
 
-Commands:
+# Commands
 
 Normal:
 
@@ -23,7 +23,15 @@ Text:
 text.write:Prompts to write a text document with a name and text you specify(1000 Lines Maximum).\
 text.read:Prints line per line of a text document you specify.
 
-Compatibility:
+# Compatibility
 
 Windows 8.1 - 64Bits(Tested)
 
+# Building from source
+
+It is a normal python script, so you must use a library to package it to a executable, an example is pyinstaller(used in the releases).\
+
+To package with it:\
+-Install the library(pip install pyinstaller)\
+-Package as one file(pyinstaller --onefile Main.py)\
+-Or, package it as a bundle(pyinstaller Main.py)
