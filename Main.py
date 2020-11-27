@@ -12,8 +12,11 @@ class Program:
             "text.write":"self.write",
             "dirgo":"self.godir",
             "main.about":"self.about",
-            "main.win.about":"self.aboutwin",
-            "createdir":"self.dirmake"
+            #"main.win.about":"self.aboutwin",
+            "createdir":"self.dirmake",
+            "text.read":"self.textread",
+            "deletedir":"self.dirdel",
+            "runfile":"self.runpy"
         }
 
     def command(self):
@@ -69,7 +72,7 @@ class Program:
 
     def about(self):
         print("GoldenPie Console")
-        print("Version 1.0 - Build 1/20.11.19")
+        print("Version 1.0 - Build 2/24.11.19")
         input("Enter to continue")
         return
 
@@ -84,6 +87,36 @@ class Program:
     def dirmake(self):
         os.mkdir(input("Type the name of the folder:") + "/")
         return
+
+    def textread(self):
+        x = 0
+        self.f_t = [""]
+        self.f = open(input("Type the name of the file:") + ".txt", "r+")
+        self.f_l = self.f.readlines()
+        for i in self.f_l:
+            self.f_t.insert(x, i)
+            x += 1
+        else:
+            for i in self.f_t:
+                print(i)
+            return
+
+    def dirdel(self):
+        pth = input("Type the name of the folder:")
+        if os.path.isdir(pth) and len(os.listdir(pth)) == 0:
+            os.rmdir(pth)
+            return
+        else:
+            print("Path is not a folder or is not empty.")
+            return
+
+    def runpy(self):
+        script = open(str(input("Type the name of the script:")) + ".txt", "r+")
+        script_l = script.readlines()
+        for i in script_l:
+            exec(i)
+        else:
+            return
 
 a = Program()
 a.command()
