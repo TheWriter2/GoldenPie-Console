@@ -27,11 +27,6 @@ text.read:Prints line per line of a text document you specify.
 
 Windows 8.1 - 64Bits(Tested)
 
-# Building from source
+# Using and Editing the Source Code
 
-It is a normal python script, so you must use a library to package it to a executable, an example is pyinstaller(used in the releases).
-
-To package with it:\
--Install the library(pip install pyinstaller)\
--Package as one file(pyinstaller --onefile Main.py)\
--Or, package it as a bundle(pyinstaller Main.py)
+It is a normal python script, so you can just edit it by having the current Python version.
