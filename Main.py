@@ -1,5 +1,4 @@
 import sys
-import random
 import os
 import platform
 
@@ -16,7 +15,22 @@ class Program:
             "createdir":"self.dirmake",
             "text.read":"self.textread",
             "deletedir":"self.dirdel",
-            "runfile":"self.runpy"
+            "help":"self.help",
+            "runpython":"self.runpy"
+        }
+
+        self.comhelp = {
+            "listdir":"Prints all folders present in the specified directory.",
+            "listfile":"Prints all files present in the specified directory.",
+            "main.exit":"Exits the console.",
+            "text.write":"Prompts to write a text document with a specified name and text(1000 Lines Maximum).",
+            "dirgo":"Goes to a directory.",
+            "main.about":"Shows the about text.",
+            "createdir":"Creates a folder in the current directory.",
+            "text.read":"Prints the specified .txt file.",
+            "deletedir":"Deletes a empty folder.",
+            "help":"Shows the help text.",
+            "runpython": "Runs a python command."
         }
 
     def command(self):
@@ -46,12 +60,14 @@ class Program:
                     return
 
     def search_file(self):
-        with os.scandir(input("Type dir to search:") + "/") as self.ents:
-            for ent in self.ents:
-                if os.path.isfile(ent):
-                    print(ent.name)
-            else:
-                return
+        pth = input("Type dir to search:")
+        if os.path.isdir(pth):
+            with os.scandir(pth + "/") as self.ents:
+                for ent in self.ents:
+                    if os.path.isfile(ent):
+                        print(ent.name)
+                else:
+                    return
 
     def exit(self):
         input("Thanks for using(Enter to continue)")
@@ -67,12 +83,14 @@ class Program:
                 self.f.write(self.l)
 
     def godir(self):
-        os.chdir(input("Type the directory to which you want to go:"))
+        pdir = input("Type the directory to which you want to go:")
+        if os.path.isdir(pdir):
+            os.chdir(pdir)
         return
 
     def about(self):
         print("GoldenPie Console")
-        print("Version 1.0 - Build 2/24.11.19")
+        print("Version 1.0 - Build 3/06.12.11")
         input("Enter to continue")
         return
 
@@ -90,16 +108,18 @@ class Program:
 
     def textread(self):
         x = 0
+        f = input("Type the name of the file:")
         self.f_t = [""]
-        self.f = open(input("Type the name of the file:") + ".txt", "r+")
-        self.f_l = self.f.readlines()
-        for i in self.f_l:
-            self.f_t.insert(x, i)
-            x += 1
-        else:
-            for i in self.f_t:
-                print(i)
-            return
+        if os.path.isfile(f):
+            self.f = open(f + ".txt", "r+")
+            self.f_l = self.f.readlines()
+            for i in self.f_l:
+                self.f_t.insert(x, i)
+                x += 1
+            else:
+                for i in self.f_t:
+                    print(i)
+                return
 
     def dirdel(self):
         pth = input("Type the name of the folder:")
@@ -110,13 +130,17 @@ class Program:
             print("Path is not a folder or is not empty.")
             return
 
+    def help(self):
+        for i in self.coms.keys():
+            print(i + " - " + self.comhelp[i])
+        return
+
     def runpy(self):
-        script = open(str(input("Type the name of the script:")) + ".txt", "r+")
-        script_l = script.readlines()
-        for i in script_l:
-            exec(i)
-        else:
-            return
+        print("Note:Python commands can cause problems with the script execution, a wrong command will crash the console.")
+        pycom = input("Type the python command:")
+        pycom.isidentifier()
+        eval(pycom)
+        return
 
 a = Program()
 a.command()
