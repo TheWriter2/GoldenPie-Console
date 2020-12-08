@@ -5,7 +5,7 @@ GoldenPie Console is a python-made console with different commands for directory
 
 # Commands
 
-Normal:
+Directories and Files:
 
 listdir:Prints all folders present in the directory you specify.\
 listfile:Prints all files present in the directory you specify.\
@@ -22,6 +22,14 @@ Text:
 
 text.write:Prompts to write a text document with a name and text you specify(1000 Lines Maximum).\
 text.read:Prints line per line of a text document you specify.
+
+Python:
+
+runpython:Lets you execute a python command.
+
+Misc:
+
+help:Shows a short description of all commands.
 
 # Compatibility
 
